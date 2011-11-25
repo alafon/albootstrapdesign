@@ -1,0 +1,51 @@
+/* 
+    Document   : bootstrap_comment.css
+    Created on : 22 nov. 2011, 13:43:38
+    Author     : alafon
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+/* 
+   TODO customize this sample style
+   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+*/
+
+.ezcom-view-list {
+    border-top: 1px solid #BFBFBF;
+    margin-top: 10px;
+    padding-top: 10px;
+}
+
+.ezcom-view-comment .gravatar {
+    width: 32px;
+    padding: 4px;
+    border: 1px #BFBFBF solid;
+    margin: 4px 0px 0px 4px;
+}
+
+.ezcom-view-comment .ezcom-comment-title h4,
+.ezcom-view-comment .author {
+    line-height: inherit;
+    padding-bottom: 2px;
+}
+
+.ezcom-view-comment .date {
+    color: #BFBFBF;
+    font-weight: bold;
+    width: 32px;
+    float: left;
+}
+
+.ezcom-view-comment .date .month {
+    text-transform: uppercase;
+    font-size: 1em;
+}
+
+.ezcom-view-comment .date .day {
+    font-size: 2em;
+}
+
+.ezcom-view-comment .date .year {
+    font-size: 1em;
+}
