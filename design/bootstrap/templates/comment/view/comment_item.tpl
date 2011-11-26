@@ -22,7 +22,10 @@
             <span class="day">{$comment.created|datetime( 'custom', '%d' )}</span>
             <span class="year">{$comment.created|datetime( 'custom', '%Y' )}</span>
         </p>
-        <img class="gravatar" src="https://secure.gravatar.com/avatar/870571b33093707be4918dc0a4aa64b1" />
+        {def $gravatar_hash = $comment.email|downcase()|trim()|md5()
+             $gravatar_url = concat( 'http://www.gravatar.com/avatar/', $gravatar_hash, '?s=32' )}
+        <img class="gravatar" src="{$gravatar_url}" />
+        {undef $gravatar_hash}
     </div>
     <div class="span10">
         {if $comment.title}
