@@ -96,24 +96,28 @@
     
     {* Adding comment form START *}
     {if and( is_set( $hide_comments ), $hide_comments )|not}
-    {if $attribute.content.enable_comment}
-        {def $can_add = fetch( 'comment', 'has_access_to_function', hash( 'function', 'add',
-                                                                       'contentobject', $contentobject,
-                                                                       'language_code', $language_code,
-                                                                       'node', $attribute_node
-                                                                        ) )}
-        {if $can_add}
-            {include uri="design:comment/add_comment.tpl" redirect_uri=$attribute_node.url_alias contentobject_id=$contentobject.id language_id=$language_id}
+        {if and( is_set( $hide_form ), $hide_form )}
+            <a class="btn primary" href={concat( $contentobject.main_node.url_alias, '#CommentAdd' )|ezurl}>{'Post comment'|i18n( 'ezcomments/comment/add/form' )}</a>
         {else}
-            <div class="alert-message error">
-                    <p>
-                        {'You don\'t have access to post comment.'|i18n( 'ezcomments/comment/view' )}
-                    </p>
-            </div>
+            {if $attribute.content.enable_comment}
+                {def $can_add = fetch( 'comment', 'has_access_to_function', hash( 'function', 'add',
+                                                                               'contentobject', $contentobject,
+                                                                               'language_code', $language_code,
+                                                                               'node', $attribute_node
+                                                                                ) )}
+                {if $can_add}
+                    {include uri="design:comment/add_comment.tpl" redirect_uri=$attribute_node.url_alias contentobject_id=$contentobject.id language_id=$language_id}
+                {else}
+                    <div class="alert-message error">
+                            <p>
+                                {'You don\'t have access to post comment.'|i18n( 'ezcomments/comment/view' )}
+                            </p>
+                    </div>
+                {/if}
+                {undef $can_add}
+            {/if}
         {/if}
-        {undef $can_add}
-    {/if}
-    {else}
+     {else}
         <a href={concat( $contentobject.main_node.url_alias, '#CommentAdd' )|ezurl}>{'Post comment'|i18n( 'ezcomments/comment/add/form' )}</a>
     {/if}
     {* Adding comment form END *}
