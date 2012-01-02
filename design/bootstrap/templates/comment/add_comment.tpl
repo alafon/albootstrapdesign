@@ -112,8 +112,7 @@
                                                                                     'option_value', 'bypass_captcha' ) )}
          {if $bypass_captcha|not}
             <div class="ezcom-field clearfix">
-              <fieldset>
-              <legend>{'Security text:'|i18n( 'ezcomments/comment/add/form' )}{$fieldRequiredText}</legend>
+                <label>{'Security text:'|i18n( 'ezcomments/comment/add/form' )}{$fieldRequiredText}</label>
               {if ezini( 'RecaptchaSetting', 'PublicKey', 'ezcomments.ini' )|eq('')}
                     <div class="message-warning">
                         {'reCAPTCHA API key missing.'|i18n( 'ezcomments/comment/add' )}
@@ -127,6 +126,7 @@
                                                      lang : '{$language}',
                                                      tabindex : {$tabIndex} {literal}}{/literal};
                   </script>
+                  <div class="input">
                   {if $theme|eq('custom')}
                       {*Customized theme start*}
                       <p>
@@ -144,8 +144,8 @@
                       {*Customized theme end*}
                    {/if}
                    {fetch( 'comment', 'recaptcha_html' )}
+                   </div>
               {/if}
-             </fieldset>
             </div>
          {/if}
          {undef $bypass_captcha}
