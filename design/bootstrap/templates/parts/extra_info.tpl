@@ -2,7 +2,6 @@
                                                 'class_filter_type', 'include',
                                                 'class_filter_array', $pagedata.extra_menu_class_list,
                                                 'sort_by', array( 'priority', false() ) ) )}
-                                                
 {foreach $infoboxes as $infobox}
-    {node_view_gui content_node=$infobox view='infobox'}
+    {node_view_gui content_node=$infobox view='infobox' extra_menu_width=$extra_menu_width}
 {/foreach}

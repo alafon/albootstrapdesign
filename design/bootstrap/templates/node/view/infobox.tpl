@@ -1,5 +1,8 @@
+{if is_set( $extra_menu_width )|not}
+{def $extra_menu_width = 4}
+{/if}
 <div class="row">
-    <div class="span4">
+    <div class="span{$extra_menu_width}">
 
     <h3>{attribute_view_gui attribute=$node.object.data_map.header}</h3>
 
