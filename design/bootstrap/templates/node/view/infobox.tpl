@@ -1,5 +1,5 @@
-{if is_set( $extra_menu_width )|not}
-{def $extra_menu_width = 4}
+{if is_unset( $extra_menu_width )}
+    {def $extra_menu_width = 4}
 {/if}
 <div class="row">
     <div class="span{$extra_menu_width}">
