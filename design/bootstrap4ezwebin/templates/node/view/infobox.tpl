@@ -2,7 +2,7 @@
     {def $extra_menu_width = 4}
 {/if}
 <div class="row">
-    <div class="span{$extra_menu_width}">
+    <div class="span{$extra_menu_width} well">
 
     <h3>{attribute_view_gui attribute=$node.object.data_map.header}</h3>
 
