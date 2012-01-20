@@ -13,6 +13,8 @@ git repository.
 
 ## Usage
 
+* Clone this repository into your extension directory.
+* Get submodules with `git submodule init && git submodule update`
 * Enable the extension
 * Modify your site.ini.append.php file (where needed) and add the designs you want to use to the AdditionalSiteDesignList array
 
@@ -23,6 +25,7 @@ AdditionalSiteDesignList[]=bootstrap4ezflow
 AdditionalSiteDesignList[]=bootstrap4ezwebin
 AdditionalSiteDesignList[]=bootstrap
 ```
+* Clear your cache
 
 ## Want to contribute ?
 
@@ -39,7 +42,7 @@ Simply remember to do `git checkout master && git checkout -b your_branch`
 
 You can rebase your master once your pull request has been merged.
 
-If you need a working branch that has some modifications that I have not yet 
+If you need a working branch that has some modifications that I have not yet
 merged. Create a branch named 'mine' and merge temporary branches in that one.
 
 ## What's next ?
